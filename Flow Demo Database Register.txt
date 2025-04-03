@@ -1,0 +1,25 @@
+Flow Demo Database
+
+Register Student
+Register Teacher
+Enroll Student to course
+Tick Attendance
+Provide Grade
+Show Quizz in course
+Show Question in Quizz
+Show Student Performance
+Show Student Attendance
+Show Student Grade
+Update Student Information
+Update Teacher Information
+Update Grade 
+Update Attendance
+
+GET total Income in each course
+
+GET total Income
+
+DELETE Student
+DELETE Teacher
+
+SHOW Trigger ON Update and Delete

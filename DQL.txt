@@ -1,0 +1,37 @@
+DQL
+0. retive all colum of all table in database
+1. get name,phone number,address from Guardian
+2. get id,name,dob,phone_number,address from Student
+3. get id,name,dob,phone_number,address,major from teacher
+4. get course that student have enrolled
+5. get course that teacher have tough
+6. get all students have studied in a class (join enrollment and course instance)
+7. get all course in specific term and year
+8. get student name,id guardian name and phone number
+9. get number of student in each class
+10. get unpaid student when enrollment
+11. get questions in  quizz on specific course instance
+12. get score when student attemp quizz
+13. get attendance in specific student in a class	
+14. get student report grade (grade Letter, avg score)
+15. get class(course instnace) that instnace from course
+16. get class_id course_instance_id end_time start_time in class allocate
+17. get numebr of student that enroll in specific term and year 
+18. get number of student that enroll in a course 
+19. retive all qizz in a course instnce
+20. retive total money that earn from student
+21. retrive total money earn in each year and term
+22. retrive total money earn in each course for a term and year
+23 .Get a list of students who are male or female.
+24. Retrieve the number of students per province.
+25. Get the top 5 youngest students.
+27. Get the most common province among students.
+28. Find students who have not enrolled in any course.
+30. Retrieve students who have enrolled in more than 3 courses.
+31. Find students who have failed.
+32. Retrieve students with 90% of attendance.
+33. Retrieve the top 10 students based on average grade.
+34. Find students with the highest total marks in each course
+35. generate an academic report (attendacne % grade(A-F) avg Rank ) for student in each course 
+
+
