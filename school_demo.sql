@@ -26,8 +26,8 @@ SELECT * FROM AvgGrades;
 
 SELECT * FROM Quizz q WHERE q.instance_id ='2022-1-1-APP';
 
-SELECT * FROM Question q WHERE q.quizz_id =4 ;
-
+SELECT * FROM quiz_with_questions qwq WHERE qwq.course_instance_id = '2022-1-1-APP' AND qwq.quizz_id = 4;
+ 
 SELECT * FROM AttendanceScores a WHERE a.instance_id ='2022-1-1-APP';
 
 SELECT * FROM AvgGrades ag WHERE ag.instance_id ='2022-1-1-APP';
@@ -38,12 +38,10 @@ SELECT * FROM StudentReport sr WHERE sr.student_id = 'S301' AND sr.instance_id =
 
 UPDATE Students s 
 	SET s.first_name = 'San'
+	WHERE s.student_id = 'S301';
 
-UPDATE Grade g 
-	SET g.score = 98
-UPDATE StudentAttendance sa 
-	SET sa.status = 'present'
-	WHERE sa.session_no = 2  AND sa.instance_id ='2022-1-1-APP' AND sa.student_id  ='S301';
+CALL updateGrade('S301', '2022-1-1-APP', 2, 97);
+CALL updateStudentAttendance('S301', '2022-1-1-APP', 2, 'present');
 
 SELECT * FROM StudentAttendance	sa WHERE sa.session_no = 2  AND sa.instance_id ='2022-1-1-APP' AND sa.student_id ='S301';
 
@@ -57,6 +55,7 @@ CALL DeleteStudent('S301');
 
 CALL DeleteEnrollment('S301','2022-1-1-APP');
 
+SELECT * FROM Class_allocate ca ;
 -- TRIGGER
 SELECT * FROM Update_Log ul;
 

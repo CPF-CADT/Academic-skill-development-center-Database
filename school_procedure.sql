@@ -299,4 +299,58 @@ BEGIN
     DELETE FROM QuizzAttempt WHERE quizz_attempt_id = quizzAttemptID;
 END&&
 
+CREATE PROCEDURE updatePaymentStatus(
+    IN eid VARCHAR(10),
+    IN pay_status BOOLEAN
+)
+BEGIN
+    UPDATE Enrollment
+    SET payment_status = pay_status
+    WHERE enrollment_id = eid;
+END &&
+
+CREATE PROCEDURE updateStudentAttendance(
+    IN stu_id VARCHAR(10),
+    IN instance VARCHAR(20),
+    IN section INT,
+    IN new_status ENUM('present', 'late', 'absent', 'permission')
+)
+BEGIN
+    UPDATE StudentAttendance
+    SET status = new_status
+    WHERE student_id = stu_id AND instance_id = instance AND session_no = section;
+END &&
+
+CREATE PROCEDURE updateGrade(
+    IN stu_id VARCHAR(10),
+    IN instance VARCHAR(20),
+    IN session INT,
+    IN new_score FLOAT
+)
+BEGIN
+    UPDATE Grade
+    SET score = new_score
+    WHERE student_id = stu_id AND instance_id = instance AND session_no = session;
+END &&
+
+CREATE PROCEDURE updateCourseFee(
+    IN course_short_name VARCHAR(5),
+    IN new_fee INT
+)
+BEGIN
+    UPDATE Course
+    SET fee = new_fee
+    WHERE short_name = course_short_name;
+END &&
+
+CREATE PROCEDURE updateCourseInstanceEndDate(
+    IN instance_id_in VARCHAR(20),
+    IN new_end_date DATE
+)
+BEGIN
+    UPDATE Course_instance
+    SET end_date = new_end_date
+    WHERE course_instance_id = instance_id_in;
+END &&
+
 DELIMITER ;

@@ -1,0 +1,55 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "database": "hr",
+            "username": "localhost",
+            "name": "localhost"
+        },
+        {
+            "key": "mousebutton2",
+            "command": "-editor.action.showContextMenu",
+            "when": "editorTextFocus"
+        },
+        {
+            "key": "mousebutton2",
+            "command": "-editor.action.showContextMenu",
+            "when": "explorerViewletFocus"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MariaDB",
+            "name": "localhostInstance",
+            "database": "school_db",
+            "username": "root",
+            "password": ""
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MariaDB",
+            "username": "root",
+            "database": "school_db",
+            "name": "mydb",
+            "password": ""
+        }
+    ]
+}

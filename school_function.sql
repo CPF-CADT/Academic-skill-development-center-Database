@@ -69,7 +69,6 @@ END&&
 DESC Enrollment;
 CREATE FUNCTION GetStudentCount(instance_id VARCHAR(20)) 
 RETURNS INT
-DETERMINISTIC
 BEGIN
     DECLARE student_count INT;
     SELECT COUNT(e.student_id) INTO student_count 
@@ -78,4 +77,56 @@ BEGIN
     RETURN student_count;
 END  &&
 
+
+CREATE FUNCTION findMaxGradeSection(instance_id VARCHAR(20))
+RETURNS INT
+BEGIN
+    DECLARE maxSection INT;
+
+    SELECT MAX(session_count) INTO maxSection
+    FROM (
+        SELECT COUNT(g.session_no) AS session_count
+        FROM Grade g
+        WHERE g.instance_id = instance_id
+        GROUP BY g.student_id
+    ) AS subquery;
+    RETURN maxSection;
+END &&
+
+CREATE FUNCTION findMaxAttendacneSection(instance_id VARCHAR(20))
+RETURNS INT
+BEGIN
+    DECLARE maxSection INT;
+
+    SELECT MAX(session_count) INTO maxSection
+    FROM (
+        SELECT COUNT(sa.session_no) AS session_count
+        FROM StudentAttendance sa
+        WHERE sa.instance_id = instance_id
+        GROUP BY sa.student_id
+    ) AS subquery;
+    RETURN maxSection;
+END &&
+
+CREATE FUNCTION CheckClassAvailability(classID VARCHAR(20), requested_start_time TIME, requested_stop_time TIME)
+RETURNS BOOLEAN
+DETERMINISTIC
+BEGIN
+    DECLARE is_available BOOLEAN DEFAULT TRUE;
+    DECLARE overlapping_count INT;
+
+    SELECT COUNT(*)  INTO overlapping_count  
+    FROM Class_allocate
+    WHERE class_id = classID
+      AND (
+          (requested_start_time < stop_time AND requested_stop_time > start_time) 
+      );
+
+    RETURN overlapping_count = 0;
+END &&
+
 DELIMITER ;
+
+use school_db;
+
+
