@@ -15,7 +15,7 @@ This script defines **views** that make data access easier for common queries. A
 
 - Creates views for simplified access to frequently queried data, such as student performance, class lists, and attendance summaries.
 
-### 3. `SchoolSQL.sql`
+### 3. `SchoolDQL.sql`
 This script contains **queries** to **retrieve data** from the database (DQL). It focuses on selecting, filtering, and aggregating data.
 
 - Defines common queries used to fetch student grades, teacher schedules, course enrollments, and attendance reports.
