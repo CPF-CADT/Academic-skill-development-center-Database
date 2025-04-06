@@ -638,7 +638,7 @@ END &&
 
 DELIMITER ;
 
-LOAD DATA INFILE 'C:\Users\USER\Desktop\Code\DATABASE_PRO\Academic-skill-development-center-Database\Dataset\teachers_30.csv'
+LOAD DATA INFILE 'C:/Users/USER/Desktop/Code/DATABASE_PRO/Academic-skill-development-center-Database/Dataset/teachers_30.csv'
 INTO TABLE Teachers
 FIELDS TERMINATED BY ','  
 ENCLOSED BY '"'  
@@ -647,7 +647,7 @@ IGNORE 1 ROWS
 (teacher_id, first_name, last_name, dob, gender, email, phone_number, password, national_id, register_date, province, address, status, major);
 SELECT * FROM Teachers;	
 
-LOAD DATA INFILE 'C:\Users\USER\Desktop\Code\DATABASE_PRO\Academic-skill-development-center-Database\Dataset\updated_students_data_300.csv'
+LOAD DATA INFILE 'C:/Users/USER/Desktop/Code/DATABASE_PRO/Academic-skill-development-center-Database/Dataset/updated_students_data_300.csv'
 INTO TABLE Students
 FIELDS TERMINATED BY ','  
 ENCLOSED BY '"'  
@@ -656,7 +656,7 @@ IGNORE 1 ROWS
 (student_id, first_name, last_name, dob, gender, email, phone_number, password, national_id, register_date, province, address, status);
 SELECT * FROM Students;
 DESCRIBE Students;
-LOAD DATA INFILE 'C:\Users\USER\Desktop\Code\DATABASE_PRO\Academic-skill-development-center-Database\Dataset\updated_guardians_data_300.csv'
+LOAD DATA INFILE 'C:/Users/USER/Desktop/Code/DATABASE_PRO/Academic-skill-development-center-Database/Dataset/updated_guardians_data_300.csv'
 INTO TABLE Guardians
 FIELDS TERMINATED BY ','  
 ENCLOSED BY '"'  
@@ -734,7 +734,7 @@ WHERE year = 2022 AND term = 1
 ORDER BY RAND()
 LIMIT 30;
 DESC Question;
-LOAD DATA INFILE 'C:\Users\USER\Desktop\Code\DATABASE_PRO\Academic-skill-development-center-Database\Dataset\questions_300.csv'
+LOAD DATA INFILE 'C:/Users/USER/Desktop/Code/DATABASE_PRO/Academic-skill-development-center-Database/Dataset/questions_300.csv'
 INTO TABLE Question
 FIELDS TERMINATED BY ','  
 ENCLOSED BY '"'  
